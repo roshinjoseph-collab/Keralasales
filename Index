@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>KOEL Sales Intelligence</title>
+<style>
+:root{--bg:#07111f;--panel:#0d1a2b;--panel2:#101f33;--text:#edf4ff;--muted:#8fa5bd;--line:#1d3047;--accent:#48b6ff;--accent2:#65d6b2;--warn:#f6bd60;--danger:#ff7180;--good:#67d7a2;--shadow:0 18px 55px rgba(0,0,0,.25)}
+:root.light{--bg:#f3f6fa;--panel:#fff;--panel2:#f8fafc;--text:#132238;--muted:#66788f;--line:#dce4ee;--accent:#1677b8;--accent2:#138a68;--warn:#b77908;--danger:#c53b4b;--good:#198754;--shadow:0 12px 35px rgba(23,48,76,.10)}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 20% 0%,rgba(72,182,255,.09),transparent 28%),var(--bg);color:var(--text);font:13px/1.45 Inter,Segoe UI,Arial,sans-serif}.app{display:grid;grid-template-columns:245px 1fr;min-height:100vh}.sidebar{position:sticky;top:0;height:100vh;border-right:1px solid var(--line);background:rgba(7,17,31,.92);padding:18px 13px;overflow:auto}.light .sidebar{background:#fff}.brand{padding:8px 10px 20px}.brand b{font-size:17px;letter-spacing:.8px}.brand small{display:block;color:var(--muted);margin-top:4px}.navgroup{margin:18px 0 8px;padding:0 10px;color:#6f879f;text-transform:uppercase;font-size:10px;letter-spacing:1.4px}.nav{display:block;width:100%;border:0;background:transparent;color:var(--muted);padding:9px 11px;text-align:left;border-radius:9px;cursor:pointer}.nav:hover,.nav.active{background:rgba(72,182,255,.10);color:var(--text)}.main{min-width:0}.topbar{height:72px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 24px;position:sticky;top:0;background:color-mix(in srgb,var(--bg) 91%,transparent);backdrop-filter:blur(14px);z-index:5}.topbar h1{font-size:17px;margin:0}.topbar p{margin:3px 0 0;color:var(--muted);font-size:11px}.actions{display:flex;gap:8px;align-items:center}.btn,.select,.input{border:1px solid var(--line);background:var(--panel);color:var(--text);border-radius:8px;padding:8px 10px}.btn{cursor:pointer}.btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}.btn:hover{filter:brightness(1.08)}.content{padding:22px;max-width:1800px;margin:auto}.upload{min-height:calc(100vh - 116px);display:grid;place-items:center}.uploadbox{max-width:900px;width:100%;background:linear-gradient(145deg,var(--panel),var(--panel2));border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow);padding:34px}.uploadbox h2{font-size:30px;margin:0 0 7px}.uploadbox>p{color:var(--muted);margin:0 0 24px}.dropgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.drop{border:1px dashed #42617e;background:rgba(255,255,255,.02);border-radius:15px;padding:22px}.drop h3{margin:0 0 4px}.drop p{color:var(--muted);min-height:38px}.drop input{width:100%}.privacy{margin-top:18px;padding:12px;border-radius:10px;background:rgba(101,214,178,.08);color:var(--good)}.status{margin-top:14px;color:var(--muted)}.hidden{display:none!important}.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;padding:12px;background:var(--panel);border:1px solid var(--line);border-radius:13px}.filters .group{display:flex;gap:6px;align-items:center}.filters label{font-size:10px;color:var(--muted);text-transform:uppercase}.cards{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}.card{background:linear-gradient(145deg,var(--panel),var(--panel2));border:1px solid var(--line);border-radius:13px;padding:15px;box-shadow:var(--shadow);min-width:0}.card .label{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.8px}.value{font-size:23px;font-weight:700;margin-top:7px;white-space:nowrap}.sub{font-size:11px;color:var(--muted);margin-top:4px}.positive{color:var(--good)}.negative{color:var(--danger)}.warning{color:var(--warn)}.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:12px;margin-top:12px}.panel{background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:14px;min-width:0}.span4{grid-column:span 4}.span6{grid-column:span 6}.span8{grid-column:span 8}.span12{grid-column:span 12}.panel h3{font-size:13px;margin:0}.panel .hint{font-size:10px;color:var(--muted)}.chart{height:300px;margin-top:8px}.tablewrap{overflow:auto;max-height:430px;margin-top:10px}.table{width:100%;border-collapse:collapse;font-size:11px}.table th,.table td{padding:8px;border-bottom:1px solid var(--line);white-space:nowrap}.table th{position:sticky;top:0;background:var(--panel2);text-align:left;color:var(--muted)}.clickrow{cursor:pointer}.clickrow:hover{background:rgba(72,182,255,.06)}.pill{display:inline-block;padding:3px 7px;border-radius:99px;background:rgba(72,182,255,.10);color:var(--accent);font-size:10px}.hero{padding:22px;border:1px solid var(--line);background:linear-gradient(135deg,rgba(72,182,255,.12),transparent 55%),var(--panel);border-radius:16px;margin-bottom:12px}.hero h2{margin:0 0 3px;font-size:22px}.hero p{margin:0;color:var(--muted)}.metricline{display:flex;justify-content:space-between;border-bottom:1px solid var(--line);padding:9px 0}.metricline:last-child{border-bottom:0}.bar{height:9px;background:var(--line);border-radius:99px;overflow:hidden}.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--accent),var(--accent2));border-radius:99px}.insight{padding:11px;border-left:3px solid var(--accent);background:var(--panel2);border-radius:7px;margin:7px 0}.toast{position:fixed;right:18px;bottom:18px;background:var(--panel);border:1px solid var(--line);padding:12px 15px;border-radius:9px;box-shadow:var(--shadow);z-index:50}.footer{color:var(--muted);font-size:10px;margin-top:18px}.modal{position:fixed;inset:0;background:rgba(0,0,0,.62);display:grid;place-items:center;z-index:40}.modalbox{width:min(1000px,92vw);max-height:86vh;overflow:auto;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:20px}.modalhead{display:flex;justify-content:space-between;align-items:center}.cmd{font-family:ui-monospace,monospace;color:var(--accent)}@media(max-width:1100px){.cards{grid-template-columns:repeat(3,1fr)}.span4,.span6{grid-column:span 6}.app{grid-template-columns:205px 1fr}}@media(max-width:760px){.app{display:block}.sidebar{position:fixed;left:-245px;z-index:20;transition:.2s}.sidebar.open{left:0}.topbar{padding:0 12px}.content{padding:12px}.cards{grid-template-columns:repeat(2,1fr)}.dropgrid{grid-template-columns:1fr}.span4,.span6,.span8,.span12{grid-column:span 12}}
+@media print{.sidebar,.topbar,.filters,.btn{display:none!important}.app{display:block}.content{padding:0}.panel,.card,.hero{box-shadow:none;break-inside:avoid}.chart{height:260px}}
+</style>
+</head>
+<body>
+<div id="app" class="app">
+<aside class="sidebar" id="sidebar"><div class="brand"><b>KOEL SALES INTELLIGENCE</b><small>Management BI • Offline</small></div><div id="nav"></div></aside>
+<main class="main"><header class="topbar"><div><h1>KOEL SALES INTELLIGENCE</h1><p>Sales Performance • Target Achievement • Growth • Forecast • H2 Intelligence</p></div><div class="actions"><span class="pill" id="fyBadge">No data</span><button class="btn" onclick="toggleTheme()">Theme</button><button class="btn" onclick="printReport()">Print</button><button class="btn primary" onclick="showPage('upload')">Upload</button></div></header>
+<section class="content" id="content"></section></main></div>
+<div id="modal" class="hidden"></div><div id="toast" class="hidden"></div>
+<script>
+/* Native offline implementation. The application deliberately avoids remote assets and requests. */
+const state={sales:[],targets:[],page:'command',filters:{fy:'ALL',month:'ALL',state:'ALL',exec:'ALL',dealer:'ALL',cat:'ALL',product:'ALL'},theme:localStorage.getItem('koelTheme')||'dark',loaded:false,salesLoaded:false,targetsLoaded:false,history:[],actions:[]};
+const months=['Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec','Jan','Feb','Mar'];
+const navGroups={Executive:['command'],Performance:['sales','monthly','executive','state','dealer','category','product'],"Target & Gap":['target','h2','runrate','forecast','recovery','scenario'],Intelligence:['growth','risk','concentration','mix','realisation','opportunity'],Comparison:['comparison'],Reporting:['reports','board','export'],System:['quality','upload','saved','settings']};
+const labels={command:'Command Center',summary:'Executive Summary',cockpit:'Management Cockpit',sales:'Sales Overview',monthly:'Monthly Trends',executive:'Executive Performance',state:'State Performance',dealer:'Dealer Performance',category:'Category Intelligence',product:'Product Intelligence',target:'Target vs Actual',h2:'H2 Gap Analysis',runrate:'Run Rate',forecast:'Forecast',recovery:'Recovery Planner',scenario:'Scenario Simulator',growth:'Growth Intelligence',risk:'Dealer Risk',concentration:'Concentration',mix:'Mix Analysis',realisation:'Price / Realisation',opportunity:'Opportunity Finder',comparison:'Comparison Studio',reports:'Reports',board:'Board Pack',export:'Export Center',quality:'Data Quality',upload:'Upload Center',saved:'Saved Views',settings:'Settings'};
+function esc(s){return String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));}
+function money(v){return '₹ '+(Number(v||0)/100000).toLocaleString('en-IN',{minimumFractionDigits:2,maximumFractionDigits:2})+' L';}
+function pct(v){return (Number.isFinite(v)?v:0).toFixed(1)+'%';}
+function yoy(curr,prev){if(prev===null||prev===undefined||!Number.isFinite(prev)||prev===0)return null;return (curr-prev)/prev*100;}
+function yoyText(curr,prev){const g=yoy(curr,prev);return g===null?'N/A':pct(g);}
+function yoyClass(curr,prev){const g=yoy(curr,prev);return g===null?'':g>=0?'positive':'negative';}
+function execTarget(exec){return targetFor(exec);}
+function executiveRows(fy){return aggregate(state.sales.filter(r=>r.FY===fy),'Executive');}
+function dealerRowsForExecutive(exec,fy){return aggregate(state.sales.filter(r=>r.FY===fy&&r.Executive===exec),'Customer Name');}
+function categoryRowsForExecutive(exec,fy){return aggregate(state.sales.filter(r=>r.FY===fy&&r.Executive===exec),'CATEGORY');}
+function productRowsForExecutive(exec,fy){return aggregate(state.sales.filter(r=>r.FY===fy&&r.Executive===exec),'Item');}
+function redFlagHtml(items,empty='No material red flags identified from the available comparison data.'){return items.length?items.slice(0,12).map(x=>`<div class="insight" style="border-left-color:var(--danger)"><b>${esc(x.title)}</b><br><span class="sub">${esc(x.detail)}</span></div>`).join(''):`<div class="sub">${empty}</div>`;}
+
+function num(v){return Number(v||0).toLocaleString('en-IN',{maximumFractionDigits:2});}
+function norm(s){return String(s??'').trim().replace(/\s+/g,' ').toLowerCase();}
+function title(s){return String(s??'').replace(/\b\w/g,c=>c.toUpperCase());}
+function toast(t){const e=document.getElementById('toast');e.textContent=t;e.className='toast';clearTimeout(window.__toast);window.__toast=setTimeout(()=>e.className='hidden',2800)}
+function toggleTheme(){state.theme=state.theme==='dark'?'light':'dark';document.documentElement.classList.toggle('light',state.theme==='light');localStorage.setItem('koelTheme',state.theme);}
+function initNav(){
+  let h='';
+  for(const [g,items] of Object.entries(navGroups)){
+    h+=`<div class="navgroup">${g}</div>`;
+    h+=items.map(x=>`<button type="button" class="nav" data-page="${esc(x)}">${esc(labels[x])}</button>`).join('');
+  }
+  const nav=document.getElementById('nav');
+  nav.innerHTML=h;
+  nav.addEventListener('click',e=>{
+    const btn=e.target.closest('.nav');
+    if(btn) showPage(btn.dataset.page);
+  });
+}
+function showPage(p){
+  if(!labels[p]) return;
+  state.page=p;
+  document.querySelectorAll('.nav').forEach(x=>x.classList.toggle('active',x.dataset.page===p));
+  render();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function render(){
+  if(!state.loaded || state.page==='upload') return renderUpload();
+  document.getElementById('content').innerHTML=pageTemplate(state.page);
+  syncFilterControls();
+  bindFilterEvents();
+  attachFilters();
+  drawPage(state.page);
+}
+function syncFilterControls(){
+  document.querySelectorAll('.filters select[data-filter]').forEach(el=>{
+    const k=el.dataset.filter;
+    const v=state.filters[k] ?? 'ALL';
+    const has=[...el.options].some(o=>o.value===v);
+    el.value=has?v:'ALL';
+  });
+}
+
+function renderUpload(){
+ const salesState=state.salesLoaded?`<span class="positive">✓ Sales data loaded (${state.sales.length.toLocaleString()} rows)</span>`:'<span>○ Sales data pending</span>';
+ const targetFys=[...new Set(state.targets.map(x=>normFY(x.FY)).filter(Boolean))];
+ const targetExecs=[...new Set(state.targets.map(x=>String(x.Executive||'').trim()).filter(Boolean))];
+ const targetTotalL=state.targets.reduce((a,x)=>a+months.reduce((s,m)=>s+targetNumber(x[m]),0),0);
+ const targetState=state.targetsLoaded?`<span class="positive">✓ ASO targets loaded (${targetExecs.length} executives • ${targetFys.join(', ')||'FY not detected'} • ₹ ${targetTotalL.toLocaleString('en-IN',{minimumFractionDigits:2,maximumFractionDigits:2})} L total)</span>`:'<span>○ ASO targets pending</span>';
+ const ready=state.salesLoaded&&state.targetsLoaded;
+ document.getElementById('content').innerHTML=`<div class="upload"><div class="uploadbox"><h2>Premium Sales Intelligence</h2><p>Load both Sales Data and ASO Targets before entering the dashboard. Either file can be uploaded first.</p><div class="dropgrid"><div class="drop"><h3>01 • SALES DATA</h3><p>Expected: STATE, Customer Name, Item, CATEGORY, Shipped Qty, Value, Month, FY, Executive</p><input type="file" id="salesFile" accept=".xlsx,.xls,.csv" onchange="loadFile(this.files[0],'sales')"><div class="status">${salesState}</div></div><div class="drop"><h3>02 • ASO TARGETS</h3><p>Channel Partner Name, ASO, Apr-26 … Mar-27. Excel date-formatted month headers are supported. Values must be actual ₹ amounts; FY 26-27 is inferred from the month headers.</p><input type="file" id="targetFile" accept=".xlsx,.xls,.csv" onchange="loadFile(this.files[0],'targets')"><div class="status">${targetState}</div></div></div><div style="margin-top:15px"><button class="btn" onclick="sampleData()">Load Sample Data</button> <button class="btn" onclick="downloadTemplate()">Download Blank Template</button></div><div class="privacy">100% Local • Your data never leaves this computer</div><div class="status" id="uploadStatus">${ready?'Both files are ready. Opening the dashboard…':state.salesLoaded?'Sales data is ready. Please upload ASO targets to continue.':state.targetsLoaded?'ASO targets are ready. Please upload Sales Data to continue.':'No data loaded. Offline native parser supports CSV and modern XLSX files.'}</div><div class="status">ASO target upload supports the exact format: Channel Partner Name + ASO + Apr-26 to Mar-27. Excel-formatted month headers are supported. Values are actual ₹ and are displayed as ₹ Lakhs. FY 26-27 is assigned automatically.</div></div></div>`;
+}
+function pageTemplate(p){const f=filterBar();const hero=`<div class="hero"><h2>${labels[p]}</h2><p>FY ${currentFY()} • Financial Values: ₹ Lakhs • Click charts/tables to drill down.</p></div>`;let body='';if(p==='command')body=overviewBody(p);else if(['sales','monthly'].includes(p))body=overviewBody(p);else if(p==='executive')body=executivePerformanceBody();else if(p==='dealer')body=dealerPerformanceBody();else if(['state','category','product'].includes(p))body=dimensionBody(p);else if(['target','h2','runrate','forecast','recovery','scenario'].includes(p))body=targetBody(p);else if(['growth','risk','concentration','mix','realisation','opportunity'].includes(p))body=intelligenceBody(p);else if(p==='comparison')body=comparisonBody();else if(['reports','board','export'].includes(p))body=reportBody(p);else if(p==='quality')body=qualityBody();else if(['saved','settings'].includes(p))body=settingsBody(p);return hero+f+body+`<div class="footer">Offline local analytics • No server • No telemetry • ₹ Lakhs only</div>`;}
+function currentFY(){const a=[...new Set([...state.sales,...state.targets].map(x=>normFY(x.FY)).filter(Boolean))];return a.sort((x,y)=>fyStartYear(y)-fyStartYear(x))[0]||'26-27';}
+function filterBar(){
+  const opts=(field)=>{
+    const values=[]; const seen=new Set();
+    for(const row of state.sales){
+      const raw=row[field]; if(raw===undefined||raw===null||String(raw).trim()==='') continue;
+      const value=String(raw).trim(), key=norm(value);
+      if(!seen.has(key)){seen.add(key);values.push(value);}
+    }
+    values.sort((a,b)=>a.localeCompare(b,undefined,{numeric:true,sensitivity:'base'}));
+    return ['ALL',...values].map(v=>`<option value="${esc(v)}">${esc(v==='ALL'?'All':v)}</option>`).join('');
+  };
+  const fyValues=[...new Set([...state.sales,...state.targets].map(r=>normFY(r.FY)).filter(Boolean))].sort((a,b)=>fyStartYear(a)-fyStartYear(b));
+  const fyOpts=['ALL',...fyValues].map(v=>`<option value="${esc(v)}">${esc(v==='ALL'?'All FY':v)}</option>`).join('');
+  return `<div class="filters" id="globalFilters">
+    <div class="group"><label>FY</label><select data-filter="fy" class="select">${fyOpts}</select></div>
+    <div class="group"><label>Month / Period</label><select data-filter="month" class="select"><option value="ALL">All</option><option value="H1">H1 (Apr-Sep)</option><option value="H2">H2 (Oct-Mar)</option><option value="Q1">Q1 (Apr-Jun)</option><option value="Q2">Q2 (Jul-Sep)</option><option value="Q3">Q3 (Oct-Dec)</option><option value="Q4">Q4 (Jan-Mar)</option>${months.map(v=>`<option value="${v}">${v}</option>`).join('')}</select></div>
+    <div class="group"><label>State</label><select data-filter="state" class="select">${opts('STATE')}</select></div>
+    <div class="group"><label>Executive</label><select data-filter="exec" class="select">${opts('Executive')}</select></div>
+    <div class="group"><label>Dealer</label><select data-filter="dealer" class="select">${opts('Customer Name')}</select></div>
+    <div class="group"><label>Category</label><select data-filter="cat" class="select">${opts('CATEGORY')}</select></div>
+    <div class="group"><label>Product</label><select data-filter="product" class="select">${opts('Item')}</select></div>
+    <button type="button" class="btn" id="clearFiltersBtn">Clear</button>
+  </div>`;
+}
+function setFilter(k,v){ if(k in state.filters){ state.filters[k]=v||'ALL'; render(); } }
+function clearFilters(){ state.filters={fy:'ALL',month:'ALL',state:'ALL',exec:'ALL',dealer:'ALL',cat:'ALL',product:'ALL'}; render(); }
+function bindFilterEvents(){
+  const box=document.getElementById('globalFilters'); if(!box) return;
+  box.addEventListener('change',e=>{const el=e.target.closest('select[data-filter]'); if(el) setFilter(el.dataset.filter,el.value);});
+  const clear=document.getElementById('clearFiltersBtn'); if(clear) clear.addEventListener('click',clearFilters);
+}
+function normMonth(v){
+ if(v===null||v===undefined||v==='')return '';
+ if(v instanceof Date && !Number.isNaN(v.getTime()))return ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'][v.getMonth()];
+ const raw=String(v).trim();
+ if(!raw)return '';
+ const num=Number(raw);
+ // Excel date serials used by formatted XLSX month headers (e.g. 46113 = 1-Apr-2026).
+ if(Number.isFinite(num) && num>20000 && num<80000){
+   const d=new Date(Date.UTC(1899,11,30)+num*86400000);
+   if(!Number.isNaN(d.getTime()))return ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'][d.getUTCMonth()];
+ }
+ let x=raw.toLowerCase().replace(/[._]/g,'-').replace(/\s+/g,'');
+ const map={jan:'Jan',january:'Jan',feb:'Feb',february:'Feb',mar:'Mar',march:'Mar',apr:'Apr',april:'Apr',may:'May',jun:'Jun',june:'Jun',jul:'Jul',july:'Jul',aug:'Aug',august:'Aug',sep:'Sep',sept:'Sep',september:'Sep',oct:'Oct',october:'Oct',nov:'Nov',november:'Nov',dec:'Dec',december:'Dec'};
+ const m=x.match(/^(jan|january|feb|february|mar|march|apr|april|may|jun|june|jul|july|aug|august|sep|sept|september|oct|october|nov|november|dec|december)(?:[-\/ ]?(?:20)?\d{2})?$/);
+ if(m)return map[m[1]];
+ const dt=new Date(raw);
+ if(!Number.isNaN(dt.getTime()) && /(?:^|[-\/\s])(?:20)?\d{2}(?:$|[-\/\s])/.test(raw))return ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'][dt.getMonth()];
+ return raw;
+}
+function targetNumber(v){
+ if(v===null||v===undefined||v==='')return 0;
+ const raw=String(v).trim();
+ const s=raw.replace(/,/g,'');
+ const n=parseFloat(s.replace(/[^0-9.\-]/g,''));
+ if(!Number.isFinite(n))return 0;
+ // ASO upload values are ACTUAL ₹ amounts. Dashboard calculations use ₹ Lakhs.
+ // Example: 4500000 in Excel becomes ₹ 45.00 L in the dashboard.
+ return n/100000;
+}
+function fyStartYear(v){const x=String(v??'').trim();const m=x.match(/(?:FY\s*)?(20\d{2})\s*[-\/]\s*(20\d{2}|\d{2})/i);if(m)return Number(m[1]);const y=x.match(/\b(\d{2})\s*[-\/]\s*(\d{2})\b/);return y?2000+Number(y[1]):0;}
+function normFY(v){let x=String(v??'').trim().replace(/\s+/g,' ');if(!x)return '';let m=x.match(/(?:FY\s*)?(20\d{2})\s*[-\/]\s*(20\d{2}|\d{2})/i);if(m){const a=String(m[1]).slice(-2),b=String(m[2]).length===4?String(m[2]).slice(-2):String(m[2]).padStart(2,'0');return a+'-'+b;}m=x.match(/\b(\d{2})\s*[-\/]\s*(\d{2})\b/);return m?m[1]+'-'+m[2]:x;}
+function sameDim(a,b){return norm(a)===norm(b);}
+function periodMonths(period){const p=String(period||'ALL');if(p==='H1')return months.slice(0,6);if(p==='H2')return months.slice(6);if(p==='Q1')return months.slice(0,3);if(p==='Q2')return months.slice(3,6);if(p==='Q3')return months.slice(6,9);if(p==='Q4')return months.slice(9,12);if(p==='ALL')return months;return [normMonth(p)];}
+function availableFYMonths(fy){const seen=new Set();state.sales.forEach(r=>{if(normFY(r.FY)===normFY(fy)){const m=normMonth(r.Month);if(months.includes(m))seen.add(m);}});return months.filter(m=>seen.has(m));}
+function activePeriodMonths(fy){return state.filters.month==='ALL'?availableFYMonths(fy):periodMonths(state.filters.month);}
+function periodFilter(rows,fy){const wanted=activePeriodMonths(fy);return rows.filter(r=>normFY(r.FY)===normFY(fy)&&wanted.includes(normMonth(r.Month)));}
+function monthMatches(rowMonth,period){return periodMonths(period).includes(normMonth(rowMonth));}
+function filtered(){const fy=state.filters.fy==='ALL'?currentFY():state.filters.fy;const wanted=activePeriodMonths(fy);return state.sales.filter(r=>(normFY(r.FY)===normFY(fy))&&wanted.includes(normMonth(r.Month))&&(state.filters.state==='ALL'||sameDim(r.STATE,state.filters.state))&&(state.filters.exec==='ALL'||sameDim(r.Executive,state.filters.exec))&&(state.filters.dealer==='ALL'||sameDim(r['Customer Name'],state.filters.dealer))&&(state.filters.cat==='ALL'||sameDim(r.CATEGORY,state.filters.cat))&&(state.filters.product==='ALL'||sameDim(r.Item,state.filters.product)));}
+function aggregate(rows,key){const m=new Map();rows.forEach(r=>{const raw=r[key]??'Unknown',k=String(raw).trim()||'Unknown',nk=norm(k);let o=m.get(nk);if(!o)o={key:k,sales:0,qty:0};o.sales+=Number(r.Value)||0;o.qty+=Number(r['Shipped Qty'])||0;m.set(nk,o)});return [...m.values()].sort((a,b)=>b.sales-a.sales)}
+function total(rows){return rows.reduce((a,r)=>a+(Number(r.Value)||0),0)}function qty(rows){return rows.reduce((a,r)=>a+(Number(r['Shipped Qty'])||0),0)}
+function targetPeriodMonths(fy){return state.filters.month==='ALL'?months:periodMonths(state.filters.month);}
+function targetLakhsFor(exec){const fy=state.filters.fy==='ALL'?currentFY():state.filters.fy;const wanted=targetPeriodMonths(fy);return state.targets.filter(x=>sameDim(x.Executive,exec)&&normFY(x.FY)===normFY(fy)&&(state.filters.dealer==='ALL'||sameDim(x['Customer Name'],state.filters.dealer))).reduce((a,x)=>a+wanted.reduce((s,m)=>s+targetNumber(x[m]),0),0)}
+function targetFor(exec){return targetLakhsFor(exec)*100000;}
+function targetRows(){const fy=state.filters.fy==='ALL'?currentFY():state.filters.fy;return state.targets.filter(x=>normFY(x.FY)===normFY(fy)&&(state.filters.exec==='ALL'||sameDim(x.Executive,state.filters.exec))&&(state.filters.dealer==='ALL'||sameDim(x['Customer Name'],state.filters.dealer)))}
+function allTarget(){const fy=state.filters.fy==='ALL'?currentFY():state.filters.fy,wanted=targetPeriodMonths(fy);return targetRows().reduce((a,x)=>a+wanted.reduce((s,m)=>s+targetNumber(x[m]),0),0)*100000;}
+function targetAvailable(){const fy=state.filters.fy==='ALL'?currentFY():state.filters.fy;const wanted=targetPeriodMonths(fy);return state.targetsLoaded&&targetRows().some(x=>wanted.some(m=>targetNumber(x[m])!==0));}
+function prevRows(){const fy=state.filters.fy==='ALL'?currentFY():state.filters.fy;const prev=previousFY(fy),wanted=activePeriodMonths(fy);return state.sales.filter(r=>normFY(r.FY)===normFY(prev)&&wanted.includes(normMonth(r.Month))&&(state.filters.state==='ALL'||sameDim(r.STATE,state.filters.state))&&(state.filters.exec==='ALL'||sameDim(r.Executive,state.filters.exec))&&(state.filters.dealer==='ALL'||sameDim(r['Customer Name'],state.filters.dealer))&&(state.filters.cat==='ALL'||sameDim(r.CATEGORY,state.filters.cat))&&(state.filters.product==='ALL'||sameDim(r.Item,state.filters.product)));}
+function kpis(){const r=filtered(),sales=total(r),prev=total(prevRows()),target=allTarget(),gap=target-sales,ach=target?sales/target*100:0,g=prev?(sales-prev)/prev*100:0;return {sales,prev,target,gap,ach,g,qty:qty(r),dealers:new Set(r.map(x=>x['Customer Name'])).size,execs:new Set(r.map(x=>x.Executive)).size};}
+function executiveMarketIntelligence(){
+ const fy=state.filters.fy==='ALL'?currentFY():state.filters.fy, prev=previousFY(fy), wanted=activePeriodMonths(fy);
+ const baseCurrent=state.sales.filter(r=>normFY(r.FY)===normFY(fy)&&wanted.includes(normMonth(r.Month))&&(state.filters.state==='ALL'||sameDim(r.STATE,state.filters.state))&&(state.filters.dealer==='ALL'||sameDim(r['Customer Name'],state.filters.dealer))&&(state.filters.cat==='ALL'||sameDim(r.CATEGORY,state.filters.cat))&&(state.filters.product==='ALL'||sameDim(r.Item,state.filters.product)));
+ const basePrev=state.sales.filter(r=>normFY(r.FY)===normFY(prev)&&wanted.includes(normMonth(r.Month))&&(state.filters.state==='ALL'||sameDim(r.STATE,state.filters.state))&&(state.filters.dealer==='ALL'||sameDim(r['Customer Name'],state.filters.dealer))&&(state.filters.cat==='ALL'||sameDim(r.CATEGORY,state.filters.cat))&&(state.filters.product==='ALL'||sameDim(r.Item,state.filters.product)));
+ const execs=[...new Set(baseCurrent.map(r=>String(r.Executive||'').trim()).filter(Boolean))];
+ const rows=execs.map(exec=>{
+   const cur=baseCurrent.filter(r=>sameDim(r.Executive,exec)), old=basePrev.filter(r=>sameDim(r.Executive,exec));
+   const sales=total(cur), prevSales=total(old), cats=aggregate(cur,'CATEGORY'), top=cats[0], growth=yoy(sales,prevSales);
+   return {exec,sales,prevSales,growth,topCat:top?.key||'N/A',topCatSales:top?.sales||0,share:0};
+ }).sort((a,b)=>b.sales-a.sales);
+ const grand=rows.reduce((a,x)=>a+x.sales,0); rows.forEach((x,i)=>{x.rank=i+1;x.share=grand?x.sales/grand*100:0});
+ if(!rows.length)return '<div class="panel span12"><h3>Executive Market Intelligence</h3><div class="insight">No executive data matches the current filters.</div></div>';
+ const table=rows.map(x=>`<tr class="clickrow" onclick="setFilter('exec','${esc(x.exec).replace(/'/g,"\\'")}');showPage('executive')"><td><b>#${x.rank}</b></td><td>${esc(x.exec)}</td><td>${money(x.sales)}</td><td>${pct(x.share)}</td><td><b>${esc(x.topCat)}</b><br><span class="sub">${money(x.topCatSales)}</span></td><td>${money(x.prevSales)}</td><td class="${x.growth===null?'':x.growth>=0?'positive':'negative'}">${x.growth===null?'N/A':pct(x.growth)}</td></tr>`).join('');
+ return `<div class="panel span12"><div style="display:flex;justify-content:space-between;gap:12px;align-items:end"><div><h3>Executive Market Intelligence</h3><span class="hint">Ranked by current-period sales • contribution is share of total executive sales • growth uses the same comparable period in the previous FY.</span></div><span class="pill">${rows.length} Executives</span></div><div class="tablewrap"><table class="table"><thead><tr><th>Rank</th><th>Executive</th><th>Sales</th><th>Contribution</th><th>Top Category</th><th>Previous FY</th><th>YoY Growth</th></tr></thead><tbody>${table}</tbody></table></div></div>`;
+}
+
+function overviewBody(p){const k=kpis();return `<div class="cards">${card('Actual Sales',money(k.sales),pct(k.g)+' YoY',k.g>=0?'positive':'negative')}${card('Target Sales',money(k.target),targetAvailable()?'ASO loaded':'Targets unavailable','')}${card('Achievement',pct(k.ach),k.target?money(k.gap)+' gap':targetAvailable()?'No target for selected period':'Upload targets','')}${card('Shipped Qty',num(k.qty),'units','')}${card('Active Dealers',num(k.dealers),num(k.execs)+' executives','')}</div><div class="grid">${executiveMarketIntelligence()}<div class="panel span8"><h3>Monthly Sales Trend</h3><span class="hint">Current filtered FY • ₹ Lakhs</span><div class="chart" id="mainChart"></div></div><div class="panel span4"><h3>Target Progress</h3><span class="hint">Actual vs target</span><div style="padding:30px 0;text-align:center"><div style="font-size:42px;font-weight:800">${pct(k.ach)}</div><div class="bar"><i style="width:${Math.min(100,k.ach)}%"></i></div><div class="sub">${money(k.sales)} of ${money(k.target)}</div></div><div class="metricline"><span>Gap</span><b>${money(k.gap)}</b></div><div class="metricline"><span>YoY</span><b class="${k.g>=0?'positive':'negative'}">${pct(k.g)}</b></div></div><div class="panel span6"><h3>Executive Performance</h3><span class="hint">Sales and target where available</span><div class="tablewrap">${dimensionTable('Executive',aggregate(filtered(),'Executive').slice(0,15))}</div></div><div class="panel span6"><h3>State Performance</h3><span class="hint">Contribution and growth context</span><div class="tablewrap">${dimensionTable('STATE',aggregate(filtered(),'STATE').slice(0,15))}</div></div><div class="panel span12"><h3>Management Insights</h3>${dealerManagementInsights()}</div></div>`;}
+function card(a,b,c,cl){return `<div class="card"><div class="label">${a}</div><div class="value">${b}</div><div class="sub ${cl}">${c}</div></div>`}
+function dimensionTable(name,arr){return `<table class="table"><thead><tr><th>${name}</th><th>Sales</th><th>Qty</th><th>Share</th></tr></thead><tbody>${arr.map(o=>`<tr class="clickrow" onclick="drill('${name}','${esc(o.key).replace(/'/g,"\\'")}')"><td>${esc(o.key)}</td><td>${money(o.sales)}</td><td>${num(o.qty)}</td><td>${pct(total(filtered())?o.sales/total(filtered())*100:0)}</td></tr>`).join('')}</tbody></table>`}
+function dealerManagementInsights(){
+ const fy=currentFY(), prev=previousFY(fy), all=state.sales.filter(r=>r.FY===fy), prevAll=state.sales.filter(r=>r.FY===prev);
+ if(!all.length)return '<div class="insight">Upload sales data to generate dealer-level management intelligence.</div>';
+ const ranked=aggregate(all,'Customer Name');
+ if(state.filters.dealer==='ALL'){
+   const scopeRows=filtered();
+   const scopeSales=total(scopeRows);
+   const cats=aggregate(scopeRows,'CATEGORY').slice(0,8);
+   const topDealers=aggregate(scopeRows,'Customer Name').slice(0,8);
+   const catHtml=cats.map(c=>`<div class="metricline"><span>${esc(c.key)}</span><b>${money(c.sales)} <small class="sub">(${pct(scopeSales?c.sales/scopeSales*100:0)} of filtered sales)</small></b></div>`).join('');
+   const dealerHtml=topDealers.map((d,i)=>`<tr><td>#${i+1}</td><td>${esc(d.key)}</td><td>${money(d.sales)}</td><td>${pct(scopeSales?d.sales/scopeSales*100:0)}</td></tr>`).join('');
+   const prev=previousFY(fy), prevScope=prevRows(), prevSales=total(prevScope), growth=yoy(scopeSales,prevSales);
+   return `<div class="hero"><h2>Management Intelligence — Overall Scope</h2><p>All Dealers selected • analysis reflects the current global filter scope, not an individual dealer.</p></div>
+   <div class="cards">${card('Filtered Sales',money(scopeSales),growth===null?'Previous comparable period unavailable':pct(growth)+' YoY',growth===null?'':growth>=0?'positive':'negative')}${card('Active Dealers',num(new Set(scopeRows.map(r=>r['Customer Name'])).size),'in current scope','')}${card('Top Dealer',topDealers[0]?.key||'N/A',topDealers[0]?money(topDealers[0].sales):'No sales','')}${card('Top Category',cats[0]?.key||'N/A',cats[0]?money(cats[0].sales):'No sales','')}${card('Category Count',num(cats.length),'active in scope','')}</div>
+   <div class="grid"><div class="panel span6"><h3>Category Contribution</h3><span class="hint">Contribution to the current filtered scope</span>${catHtml||'<div class="sub">No category data.</div>'}</div>
+   <div class="panel span6"><h3>Top Dealers in Current Scope</h3><div class="tablewrap"><table class="table"><thead><tr><th>Rank</th><th>Dealer</th><th>Sales</th><th>Share</th></tr></thead><tbody>${dealerHtml||'<tr><td colspan="4">No dealer data.</td></tr>'}</tbody></table></div></div>
+   <div class="panel span12"><h3>Scope Interpretation</h3><p class="hint">Because All Dealers is selected, no dealer-specific denominator, rank, peer benchmark, or SKU focus is used here. Select one dealer in the global filter to activate Dealer Management Intelligence.</p></div></div>`;
+ }
+ const selected=state.filters.dealer;
+ if(!selected)return '<div class="insight">No dealer is available in the current sales data.</div>';
+ const dealerRows=all.filter(r=>r['Customer Name']===selected), dealerPrev=prevAll.filter(r=>r['Customer Name']===selected);
+ const dealerSales=total(dealerRows), overall=total(all), rank=Math.max(1,ranked.findIndex(x=>x.key===selected)+1), share=overall?dealerSales/overall*100:0;
+ const prevH2=dealerPrev.filter(r=>isH2(r.Month)), currH2=dealerRows.filter(r=>isH2(r.Month));
+ const prevH2Sales=total(prevH2), currH2Sales=total(currH2), h2Growth=yoy(currH2Sales,prevH2Sales);
+ const categories=aggregate(dealerRows,'CATEGORY').slice(0,6), skus=aggregate(dealerRows,'Item');
+ const selectedRank=ranked.findIndex(x=>x.key===selected); let peers=ranked.filter((x,i)=>i!==selectedRank).slice(Math.max(0,selectedRank-3),selectedRank); if(peers.length<3) peers=ranked.filter(x=>x.key!==selected).slice(0,3);
+ const peerRows=peers.map(x=>{const rows=all.filter(r=>r['Customer Name']===x.key),ph2=prevAll.filter(r=>r['Customer Name']===x.key&&isH2(r.Month));return {key:x.key,sales:x.sales,share:overall?x.sales/overall*100:0,prevH2:total(ph2),h2:total(rows.filter(r=>isH2(r.Month))),growth:total(ph2)?(total(rows.filter(r=>isH2(r.Month)))-total(ph2))/total(ph2)*100:0,rank:ranked.findIndex(z=>z.key===x.key)+1};});
+ const benchmark=peerRows.length?peerRows.reduce((a,b)=>a+b.sales,0)/peerRows.length:0, gapToBenchmark=Math.max(0,benchmark-dealerSales);
+ const currentMonths=[...new Set(dealerRows.map(r=>months.indexOf(String(r.Month).slice(0,3))+1).filter(x=>x>0))].sort((a,b)=>a-b), elapsedH2=currentMonths.filter(x=>x>=7).length;
+ const projectedH2=elapsedH2?currH2Sales/elapsedH2*6:currH2Sales;
+ const projectedFY=total(dealerRows.filter(r=>!isH2(r.Month)))+projectedH2;
+ const skuFocus=skus.map(x=>{const pr=prevAll.filter(r=>r['Customer Name']===selected&&r.Item===x.key&&isH2(r.Month)), cr=currH2.filter(r=>r.Item===x.key);const ps=total(pr),cs=total(cr);return {...x,prevH2:ps,currentH2:cs,growth:ps?(cs-ps)/ps*100:cs?100:0};}).sort((a,b)=>(b.currentH2-b.prevH2)-(a.currentH2-a.prevH2)).slice(0,5);
+ const focusLabel=state.filters.dealer==='ALL'?`Focus dealer: <b>${esc(selected)}</b> (highest current-FY dealer). Select a dealer in the global filter to change the analysis.`:`Selected dealer: <b>${esc(selected)}</b>`;
+ const categoryHtml=categories.map(c=>`<div class="metricline"><span>${esc(c.key)}</span><b>${money(c.sales)} <small class="sub">(${pct(dealerSales?c.sales/dealerSales*100:0)} of dealer sales)</small></b></div>`).join('');
+ const peerHtml=peerRows.map(p=>`<tr><td>#${p.rank}</td><td>${esc(p.key)}</td><td>${money(p.sales)}</td><td>${pct(p.share)}</td><td>${money(p.h2)}</td><td class="${p.growth>=0?'positive':'negative'}">${pct(p.growth)}</td></tr>`).join('');
+ const skuHtml=skuFocus.map(x=>`<tr><td>${esc(x.key)}</td><td>${money(x.currentH2)}</td><td>${money(x.prevH2)}</td><td class="${x.growth>=0?'positive':'negative'}">${pct(x.growth)}</td><td>${money(Math.max(0,x.currentH2-x.prevH2))}</td></tr>`).join('');
+ return `<div class="hero"><h2>Dealer Management Intelligence</h2><p>${focusLabel}</p></div>
+ <div class="cards">${card('Dealer Sales',money(dealerSales),pct(share)+' of overall sales','')}${card('Sales Rank','#'+rank,'of '+ranked.length+' dealers','')}${card('H2 Sales',money(currH2Sales),h2Growth===null?'N/A — no comparable previous FY H2':pct(h2Growth)+' vs previous FY H2',h2Growth===null?'':h2Growth>=0?'positive':'negative')}${card('Projected FY',money(projectedFY),'run-rate projection','')}${card('Gap to Peer Benchmark',money(gapToBenchmark),'vs average of top 3 peers',gapToBenchmark?'warning':'positive')}</div>
+ <div class="grid"><div class="panel span6"><h3>Dealer Category Contribution</h3><span class="hint">Contribution to ${esc(selected)}'s own sales, not company sales</span>${categoryHtml||'<div class="sub">No category data.</div>'}</div>
+ <div class="panel span6"><h3>H2 Competitive Benchmark</h3><span class="hint">Three highest-ranked dealers in the current FY, excluding the focus dealer</span><div class="tablewrap"><table class="table"><thead><tr><th>Rank</th><th>Dealer</th><th>FY Sales</th><th>Overall Share</th><th>H2 Sales</th><th>H2 YoY</th></tr></thead><tbody>${peerHtml||'<tr><td colspan="6">Not enough dealer data for peer comparison.</td></tr>'}</tbody></table></div></div>
+ <div class="panel span6"><h3>What the peer benchmark implies for H2</h3><div class="metricline"><span>Average peer FY sales</span><b>${money(benchmark)}</b></div><div class="metricline"><span>Current dealer FY sales</span><b>${money(dealerSales)}</b></div><div class="metricline"><span>Additional sales to reach peer average</span><b class="warning">${money(gapToBenchmark)}</b></div><div class="metricline"><span>Projected H2 sales at current run-rate</span><b>${money(projectedH2)}</b></div><p class="hint">This is a benchmark calculation, not a target commitment. Use it to identify the H2 sales scale needed to close the observed peer gap.</p></div>
+ <div class="panel span6"><h3>Past FY H2 Competitive Pattern</h3><span class="hint">Focus dealer vs selected peers using previous FY H2 actuals</span>${[selected,...peerRows.map(x=>x.key)].map((name,i)=>{const rr=(i===0?dealerPrev:prevAll.filter(r=>r['Customer Name']===name)).filter(r=>isH2(r.Month));return `<div class="metricline"><span>${esc(name)}</span><b>${money(total(rr))}</b></div>`}).join('')}<div class="metricline"><span>Focus dealer H2 YoY</span><b class="${h2Growth>=0?'positive':'negative'}">${h2Growth===null?'N/A':pct(h2Growth)}</b></div></div>
+ <div class="panel span12"><h3>SKU Focus for H2</h3><span class="hint">Prioritised from the focus dealer's own H2 history, current H2 contribution and change</span><div class="tablewrap"><table class="table"><thead><tr><th>SKU</th><th>Current H2</th><th>Previous FY H2</th><th>H2 YoY</th><th>Change</th></tr></thead><tbody>${skuHtml||'<tr><td colspan="5">No SKU history available.</td></tr>'}</tbody></table></div><p class="hint">Concentrate review on SKUs with meaningful H2 contribution and positive/repairable historical movement; validate stock, pricing and dealer demand before committing the H2 plan.</p></div></div>`;
+}
+function previousFY(fy){if(/^\d{2}-\d{2}$/.test(String(fy))){const y=+String(fy).slice(0,2);return String((y+99)%100).padStart(2,'0')+'-'+String(y).padStart(2,'0')}return fy}
+function isH2(m){return ['Oct','Nov','Dec','Jan','Feb','Mar'].includes(String(m).trim().slice(0,3))}
+
+function drawPage(p){drawChart('mainChart',monthlySeries(filtered()),'Sales ₹ Lakhs');}
+function monthlySeries(rows){return months.map(m=>({k:m,v:rows.filter(r=>r.Month===m).reduce((a,r)=>a+(+r.Value||0),0)}));}
+function drawChart(id,data,label){const el=document.getElementById(id);if(!el)return;const w=el.clientWidth||700,h=260,p=32,max=Math.max(1,...data.map(x=>x.v));let pts=data.map((x,i)=>[p+i*(w-2*p)/Math.max(1,data.length-1),h-p-(x.v/max)*(h-2*p)]);let path=pts.map((q,i)=>(i?'L':'M')+q[0].toFixed(1)+' '+q[1].toFixed(1)).join(' ');el.innerHTML=`<svg width="100%" height="100%" viewBox="0 0 ${w} ${h}" preserveAspectRatio="none"><path d="M${p} ${h-p}H${w-p}" stroke="var(--line)"/><path d="${path}" fill="none" stroke="var(--accent)" stroke-width="3"/><path d="${path} L${w-p} ${h-p} L${p} ${h-p}Z" fill="var(--accent)" opacity=".08"/>${pts.map((q,i)=>`<circle cx="${q[0]}" cy="${q[1]}" r="4" fill="var(--accent)"/><text x="${q[0]}" y="${h-8}" fill="var(--muted)" text-anchor="middle" font-size="10">${data[i].k}</text>`).join('')}</svg>`}
+function executivePerformanceBody(){const fy=state.filters.fy==='ALL'?currentFY():state.filters.fy,prev=previousFY(fy),rows=executiveRows(fy),selected=state.filters.exec==='ALL'?(rows[0]?.key||''):state.filters.exec;if(!selected)return '<div class="insight">No executive data is available.</div>';const wanted=activePeriodMonths(fy),cur=state.sales.filter(r=>normFY(r.FY)===normFY(fy)&&sameDim(r.Executive,selected)&&wanted.includes(normMonth(r.Month))),old=state.sales.filter(r=>normFY(r.FY)===normFY(prev)&&sameDim(r.Executive,selected)&&wanted.includes(normMonth(r.Month))),sales=total(cur),oldSales=total(old),target=execTarget(selected),ach=target?sales/target*100:null,dealers=aggregate(cur,'Customer Name'),cats=aggregate(cur,'CATEGORY'),skus=aggregate(cur,'Item'),dealerFlags=dealers.map(d=>{const p=total(old.filter(r=>sameDim(r['Customer Name'],d.key))),g=yoy(d.sales,p);return g!==null&&g<0?{title:`${d.key} — dealer value declining ${pct(g)} YoY`,detail:`Current ${money(d.sales)} vs previous FY ${money(p)}.`}:null}).filter(Boolean),catFlags=cats.map(c=>{const p=total(old.filter(r=>sameDim(r.CATEGORY,c.key))),g=yoy(c.sales,p);return g!==null&&g<0?{title:`${c.key} — category value declining ${pct(g)} YoY`,detail:`Current ${money(c.sales)} vs previous FY ${money(p)}.`}:null}).filter(Boolean);return `<div class="hero"><h2>Executive Performance — ${esc(selected)}</h2><p>Entity-level scorecard • FY ${esc(fy)} • ${state.filters.month==='ALL'?'Full FY':'Selected month: '+state.filters.month}.</p></div><div class="cards">${card('Dealers Handled',num(dealers.length),'active dealers in current period','')}${card('Top Contributing Dealer',dealers[0]?.key||'N/A',dealers[0]?money(dealers[0].sales):'No sales','')}${card('Cash Cow Category',cats[0]?.key||'N/A',cats[0]?money(cats[0].sales):'No sales','')}${card('Revenue Generator SKU',skus[0]?.key||'N/A',skus[0]?money(skus[0].sales):'No sales','')}${card('Target Achievement',ach===null?'N/A':pct(ach),target?money(sales-target)+' gap':'Target unavailable',ach!==null&&ach>=100?'positive':ach!==null?'warning':'')}</div><div class="grid"><div class="panel span6"><h3>Executive Target vs Achievement</h3><div class="metricline"><span>Actual Sales</span><b>${money(sales)}</b></div><div class="metricline"><span>Target</span><b>${target?money(target):'N/A'}</b></div><div class="metricline"><span>Achievement</span><b>${ach===null?'N/A':pct(ach)}</b></div><div class="metricline"><span>Gap</span><b>${target?money(target-sales):'N/A'}</b></div><div class="metricline"><span>FY YoY</span><b class="${oldSales?yoyClass(sales,oldSales):''}">${oldSales?yoyText(sales,oldSales):'N/A'}</b></div></div><div class="panel span6"><h3>Category-wise YoY Growth</h3><div class="tablewrap"><table class="table"><thead><tr><th>Category</th><th>Current</th><th>Previous</th><th>YoY Growth</th><th>Share</th></tr></thead><tbody>${cats.map(c=>{const p=total(old.filter(r=>sameDim(r.CATEGORY,c.key))),g=yoy(c.sales,p);return `<tr><td>${esc(c.key)}</td><td>${money(c.sales)}</td><td>${money(p)}</td><td class="${g===null?'':g>=0?'positive':'negative'}">${g===null?'N/A':pct(g)}</td><td>${pct(sales?c.sales/sales*100:0)}</td></tr>`}).join('')}</tbody></table></div></div><div class="panel span6"><h3>Dealer Portfolio</h3><div class="tablewrap"><table class="table"><thead><tr><th>Dealer</th><th>Sales</th><th>Share</th><th>YoY</th></tr></thead><tbody>${dealers.slice(0,20).map(d=>{const p=total(old.filter(r=>sameDim(r['Customer Name'],d.key))),g=yoy(d.sales,p);return `<tr class="clickrow" onclick="setFilter('dealer','${esc(d.key).replace(/'/g,"\\'")}');showPage('dealer')"><td>${esc(d.key)}</td><td>${money(d.sales)}</td><td>${pct(sales?d.sales/sales*100:0)}</td><td class="${g===null?'':g>=0?'positive':'negative'}">${g===null?'N/A':pct(g)}</td></tr>`}).join('')}</tbody></table></div></div><div class="panel span6"><h3>Revenue Generator SKUs</h3><div class="tablewrap"><table class="table"><thead><tr><th>SKU</th><th>Sales</th><th>Share</th><th>YoY</th></tr></thead><tbody>${skus.slice(0,20).map(x=>{const p=total(old.filter(r=>sameDim(r.Item,x.key))),g=yoy(x.sales,p);return `<tr><td>${esc(x.key)}</td><td>${money(x.sales)}</td><td>${pct(sales?x.sales/sales*100:0)}</td><td class="${g===null?'':g>=0?'positive':'negative'}">${g===null?'N/A':pct(g)}</td></tr>`}).join('')}</tbody></table></div></div><div class="panel span12"><h3>Red Flags & Escalation</h3><span class="hint">Only declines with a comparable previous-FY base are flagged.</span>${redFlagHtml([...dealerFlags,...catFlags])}</div></div>`;}
+
+function dealerPerformanceBody(){const fy=state.filters.fy==='ALL'?currentFY():state.filters.fy,prev=previousFY(fy),wanted=activePeriodMonths(fy),all=aggregate(state.sales.filter(r=>r.FY===fy),'Customer Name'),selected=state.filters.dealer==='ALL'?(all[0]?.key||''):state.filters.dealer;if(!selected)return '<div class="insight">No dealer data is available.</div>';const cur=state.sales.filter(r=>normFY(r.FY)===normFY(fy)&&r['Customer Name']===selected&&wanted.includes(normMonth(r.Month))),old=state.sales.filter(r=>normFY(r.FY)===normFY(prev)&&r['Customer Name']===selected&&wanted.includes(normMonth(r.Month))),sales=total(cur),oldSales=total(old),cats=aggregate(cur,'CATEGORY'),skus=aggregate(cur,'Item'),flags=[...cats.map(c=>{const p=total(old.filter(r=>r.CATEGORY===c.key)),g=yoy(c.sales,p);return g!==null&&g<0?{title:`${c.key} declining ${pct(g)} YoY`,detail:`Current ${money(c.sales)} vs previous FY ${money(p)}.`}:null}),...skus.map(x=>{const p=total(old.filter(r=>r.Item===x.key)),g=yoy(x.sales,p);return g!==null&&g<0?{title:`${x.key} declining ${pct(g)} YoY`,detail:`Current ${money(x.sales)} vs previous FY ${money(p)}.`}:null})].filter(Boolean);return `<div class="hero"><h2>Dealer Performance — ${esc(selected)}</h2><p>Dealer scorecard • FY ${esc(fy)} • red flags are based on comparable prior-FY sales.</p></div><div class="cards">${card('Dealer Sales',money(sales),oldSales?yoyText(sales,oldSales)+' YoY':'Previous FY unavailable',oldSales?yoyClass(sales,oldSales):'')}${card('Sales Rank','#'+(all.findIndex(x=>x.key===selected)+1),'of '+all.length+' dealers','')}${card('Top Category',cats[0]?.key||'N/A',cats[0]?money(cats[0].sales):'No sales','')}${card('Top SKU',skus[0]?.key||'N/A',skus[0]?money(skus[0].sales):'No sales','')}${card('Active Categories',num(cats.length),'current FY','')}</div><div class="grid"><div class="panel span6"><h3>Category Performance & YoY</h3><div class="tablewrap"><table class="table"><thead><tr><th>Category</th><th>Current</th><th>Previous</th><th>YoY</th><th>Share</th></tr></thead><tbody>${cats.map(c=>{const p=total(old.filter(r=>r.CATEGORY===c.key)),g=yoy(c.sales,p);return `<tr><td>${esc(c.key)}</td><td>${money(c.sales)}</td><td>${money(p)}</td><td class="${g===null?'':g>=0?'positive':'negative'}">${g===null?'N/A':pct(g)}</td><td>${pct(sales?c.sales/sales*100:0)}</td></tr>`}).join('')}</tbody></table></div></div><div class="panel span6"><h3>SKU Revenue Generators</h3><div class="tablewrap"><table class="table"><thead><tr><th>SKU</th><th>Sales</th><th>Previous</th><th>YoY</th></tr></thead><tbody>${skus.slice(0,20).map(x=>{const p=total(old.filter(r=>r.Item===x.key)),g=yoy(x.sales,p);return `<tr><td>${esc(x.key)}</td><td>${money(x.sales)}</td><td>${money(p)}</td><td class="${g===null?'':g>=0?'positive':'negative'}">${g===null?'N/A':pct(g)}</td></tr>`}).join('')}</tbody></table></div></div><div class="panel span12"><h3>Red Flags & Escalation</h3>${redFlagHtml(flags,'No category or SKU decline with a comparable prior-FY base was found.')}</div></div>`;}
+function dimensionBody(p){const key={executive:'Executive',state:'STATE',dealer:'Customer Name',category:'CATEGORY',product:'Item'}[p];let rows=filtered();if(p==='state'&&state.filters.state==='ALL'&&state.filters.fy==='ALL')rows=state.sales.filter(r=>normFY(r.FY)===normFY(currentFY()));const arr=aggregate(rows,key);if(!arr.length)return `<div class="panel"><h3>${labels[p]}</h3><div class="insight">No data matches the current filters.</div><p class="hint">Try clearing the global filters or selecting another FY / month / executive / dealer.</p></div>`;return `<div class="grid"><div class="panel span8"><h3>${labels[p]} Matrix</h3><span class="hint">Current filtered period • ₹ Lakhs</span><div class="chart" id="dimChart"></div></div><div class="panel span4"><h3>Top Contributors</h3>${arr.slice(0,8).map((o,i)=>`<div class="metricline"><span>${i+1}. ${esc(o.key)}</span><b>${money(o.sales)}</b></div>`).join('')}</div><div class="panel span12"><h3>Detailed Analysis</h3><div class="tablewrap">${dimensionTable(key,arr.slice(0,100))}</div></div></div>`}
+
+function attachFilters(){const k=state.page;setTimeout(()=>{let key={executive:'Executive',state:'STATE',dealer:'Customer Name',category:'CATEGORY',product:'Item'}[k];if(key)drawBar('dimChart',aggregate(filtered(),key).slice(0,12));},0)}
+function drawBar(id,arr){const el=document.getElementById(id);if(!el)return;const w=el.clientWidth||700,h=270,p=36,max=Math.max(1,...arr.map(x=>x.sales)),bw=Math.max(18,(w-2*p)/Math.max(1,arr.length)-8);el.innerHTML=`<svg width="100%" height="100%" viewBox="0 0 ${w} ${h}">${arr.map((o,i)=>{let x=p+i*((w-2*p)/arr.length)+4, bh=(o.sales/max)*(h-55),y=h-30-bh;return `<rect x="${x}" y="${y}" width="${bw}" height="${bh}" rx="3" fill="var(--accent)" opacity="${1-i*.035}"/><text x="${x+bw/2}" y="${h-12}" fill="var(--muted)" font-size="9" text-anchor="middle">${esc(String(o.key).slice(0,12))}</text>`}).join('')}</svg>`}
+function targetBody(p){const k=kpis(),h1=months.slice(0,6).reduce((a,m)=>a+filtered().filter(r=>normMonth(r.Month)===m).reduce((s,r)=>s+(+r.Value||0),0),0),tr=targetRows(),h1t=tr.reduce((a,x)=>a+months.slice(0,6).reduce((s,m)=>s+targetNumber(x[m]),0),0)*100000,h2t=tr.reduce((a,x)=>a+months.slice(6).reduce((s,m)=>s+targetNumber(x[m]),0),0)*100000,short=Math.max(0,h1t-h1),req=h2t+short,rem=Math.max(1,months.length-6),rr=req/rem;return `<div class="cards">${card('H1 Actual',money(h1),'₹ Lakhs','')}${card('H1 Target',money(h1t),'₹ Lakhs','')}${card('H1 Gap',money(h1t-h1),'carry-over',h1>=h1t?'positive':'negative')}${card('H2 Target',money(h2t),'₹ Lakhs','')}${card('Required H2',money(req),'₹ Lakhs','warning')}${card('Required Run Rate',money(rr)+'/mo','remaining H2','')}${card('Current Run Rate',money(k.sales/Math.max(1,new Set(filtered().map(r=>r.Month)).size))+'/mo','filtered period','')}${card('Forecast',money(forecastValue(filtered())),'seasonality-adjusted','')}</div><div class="grid"><div class="panel span8"><h3>H2 Gap Waterfall</h3><div class="chart" id="waterfall"></div></div><div class="panel span4"><h3>Run Rate Requirement</h3><div class="metricline"><span>Required H2</span><b>${money(req)}</b></div><div class="metricline"><span>Monthly requirement</span><b>${money(rr)}</b></div><div class="metricline"><span>Current run rate</span><b>${money(k.sales/Math.max(1,new Set(filtered().map(r=>r.Month)).size))}</b></div><div class="metricline"><span>Uplift required</span><b class="warning">${pct(Math.max(0,(rr/(k.sales/Math.max(1,new Set(filtered().map(r=>r.Month)).size))-1)*100))}</b></div></div><div class="panel span12"><h3>${labels[p]} — Executive View</h3><div class="tablewrap">${targetTable()}</div></div></div>`}
+function forecastValue(rows){const cur=monthlySeries(rows), nonzero=cur.filter(x=>x.v>0),avg=nonzero.length?nonzero.reduce((a,x)=>a+x.v,0)/nonzero.length:0;return avg*12*100000;}
+function targetTable(){const ex=[...new Set(state.sales.map(r=>r.Executive))].filter(Boolean);return `<table class="table"><thead><tr><th>Executive</th><th>Sales</th><th>Target</th><th>Achievement</th><th>Gap</th><th>Forecast</th></tr></thead><tbody>${ex.map(e=>{let s=total(filtered().filter(r=>sameDim(r.Executive,e))),t=targetFor(e),g=t?s/t*100:0,f=forecastValue(filtered().filter(r=>r.Executive===e));return `<tr><td>${esc(e)}</td><td>${money(s)}</td><td>${money(t)}</td><td>${pct(g)}</td><td>${money(t-s)}</td><td>${money(f)}</td></tr>`}).join('')}</tbody></table>`}
+function intelligenceBody(p){let r=filtered(), arr=aggregate(r,p==='opportunity'||p==='risk'?'Customer Name':p==='mix'?'CATEGORY':'Customer Name');let txt='';if(p==='realisation'){const real=qty(r)?total(r)/qty(r):0;txt=`<div class="cards">${card('Average Realisation',money(real),'Value / Quantity','')}${card('Quantity',num(qty(r)),'units','')}${card('Sales',money(total(r)),'₹ Lakhs','')}</div>`}if(p==='concentration'){const s=total(r),top5=arr.slice(0,5).reduce((a,x)=>a+x.sales,0);txt=`<div class="cards">${card('Top 5 Share',pct(s?top5/s*100:0),'dealer concentration','')}${card('Top 10 Share',pct(s?arr.slice(0,10).reduce((a,x)=>a+x.sales,0)/s*100:0),'dealer concentration','')}${card('Dealers',num(arr.length),'active','')}</div>`}if(p==='opportunity'){txt=`<div class="panel span12"><h3>Opportunity Board</h3>${arr.slice(0,15).map(o=>`<div class="insight"><b>${esc(o.key)}</b> — ${money(o.sales)} current contribution. Review YoY movement, target gap and mix before assigning action.</div>`).join('')}</div>`}return `<div class="grid">${txt||`<div class="panel span8"><h3>${labels[p]}</h3><div class="chart" id="intelChart"></div></div><div class="panel span4"><h3>Key Entities</h3>${arr.slice(0,10).map(o=>`<div class="metricline"><span>${esc(o.key)}</span><b>${money(o.sales)}</b></div>`).join('')}</div>`}<div class="panel span12"><h3>Analytical Detail</h3><div class="tablewrap">${dimensionTable('Dealer',arr.slice(0,100))}</div></div></div>`}
+function comparisonBody(){return `<div class="panel"><h3>Comparison Studio</h3><p class="hint">Select entities from the global filters and compare the filtered view against the previous FY where available.</p><div class="cards">${card('Current Sales',money(total(filtered())),'filtered','')}${card('Previous FY',money(total(prevRows())),'same filter dimensions','')}${card('Growth',pct(total(prevRows())?(total(filtered())-total(prevRows()))/total(prevRows())*100:0),'YoY','')}${card('Quantity',num(qty(filtered())),'units','')}</div></div>`}
+function reportBody(p){return `<div class="grid"><div class="panel span6"><h3>Management Report</h3><p class="hint">Print-optimised current view.</p><button class="btn primary" onclick="printReport()">Print / Save PDF</button></div><div class="panel span6"><h3>Export Center</h3><button class="btn" onclick="exportCSV()">Export Filtered CSV</button> <button class="btn" onclick="exportXLS()">Excel-compatible .xls</button></div><div class="panel span12"><h3>Board Pack</h3><p>Use Print to capture the management cockpit with charts and key metrics. Browser print can save to PDF without any server.</p></div></div>`}
+function qualityBody(){let r=state.sales,missing=r.filter(x=>!x.STATE||!x.Executive||!x['Customer Name']||!x.Item||!x.CATEGORY).length,bad=r.filter(x=>!Number.isFinite(+x.Value)||!Number.isFinite(+x['Shipped Qty'])).length,score=r.length?Math.max(0,100-(missing+bad)/r.length*100):0;return `<div class="cards">${card('Rows',num(r.length),'sales records','')}${card('Data Quality',pct(score),'calculated','')}${card('Missing Key Fields',num(missing),'rows','')}${card('Invalid Numeric',num(bad),'rows','')}</div><div class="panel" style="margin-top:12px"><h3>Validation Rules</h3><div class="metricline"><span>Required columns</span><b>${r.length?'Loaded':'Pending'}</b></div><div class="metricline"><span>FY ordering</span><b>Apr → Mar</b></div><div class="metricline"><span>Currency</span><b>₹ Lakhs</b></div></div>`}
+function settingsBody(p){return `<div class="panel"><h3>Settings</h3><div class="metricline"><span>Theme</span><button class="btn" onclick="toggleTheme()">Toggle</button></div><div class="metricline"><span>Default landing page</span><select class="select"><option>Command Center</option></select></div><div class="metricline"><span>Local storage</span><button class="btn" onclick="localStorage.clear();toast('Local settings cleared')">Clear local settings</button></div></div>`}
+function drill(key,val){if(key==='Executive')state.filters.exec=val;if(key==='STATE')state.filters.state=val;if(key==='Customer Name')state.filters.dealer=val;if(key==='CATEGORY')state.filters.cat=val;if(key==='Item')state.filters.product=val;toast('Filter applied: '+val);render();}
+function parseCSV(text){const lines=text.replace(/\r/g,'').split('\n').filter(x=>x.trim());const parseLine=l=>{let out=[],cur='',q=false;for(let i=0;i<l.length;i++){let c=l[i];if(c==='"'&&l[i+1]==='"'){cur+='"';i++;continue}if(c==='"'){q=!q;continue}if(c===','&&!q){out.push(cur);cur='';continue}cur+=c}out.push(cur);return out};const head=parseLine(lines[0]).map(x=>x.trim());return lines.slice(1).map(l=>{let a=parseLine(l),o={};head.forEach((h,i)=>o[h]=a[i]??'');return o});}
+async function loadFile(file,type){
+ if(!file)return;
+ const status=document.getElementById('uploadStatus');
+ if(status)status.textContent='Reading '+file.name+'…';
+ try{
+  let rows;
+  if(file.name.toLowerCase().endsWith('.csv'))rows=parseCSV(await file.text());
+  else rows=await parseXLSX(await file.arrayBuffer());
+  rows=normalizeRows(rows,type);
+  if(!rows.length)throw Error('The uploaded file contains no usable data rows.');
+  if(type==='sales'){state.sales=rows;state.salesLoaded=true;}
+  else{state.targets=rows;state.targetsLoaded=true;}
+  state.loaded=state.salesLoaded&&state.targetsLoaded;
+  state.history.push({name:file.name,type,rows:rows.length,when:new Date().toLocaleString()});
+  toast(type==='sales'?'Sales data uploaded':'ASO targets uploaded');
+  if(state.loaded){
+   state.page='command';
+   document.getElementById('fyBadge').textContent='FY '+currentFY();
+   render();
+  }else{
+   renderUpload();
+  }
+ }catch(e){
+  console.error(e);
+  const msg='Could not parse file: '+e.message;
+  if(document.getElementById('uploadStatus'))document.getElementById('uploadStatus').textContent=msg;
+  toast('File parsing failed');
+ }
+}
+function normalizeRows(rows,type){return rows.map(r=>{
+ let o={};
+ for(const [k,v] of Object.entries(r)){const kk=String(k).trim();o[kk]=typeof v==='string'?v.trim():v}
+ if(type==='sales'){
+  const map={state:'STATE','customer name':'Customer Name','customer':'Customer Name','channel partner name':'Customer Name','channel partner':'Customer Name','item':'Item','category':'CATEGORY','shipped qty':'Shipped Qty','quantity':'Shipped Qty','value':'Value','month':'Month','fy':'FY','executive':'Executive','executive name':'Executive','aso':'Executive'};
+  let n={};
+  for(const [k,v] of Object.entries(o))n[map[norm(k)]||k]=v;
+  n.FY=normFY(n.FY);n.Month=normMonth(n.Month);
+  ['STATE','Customer Name','Item','CATEGORY','Executive'].forEach(k=>{if(n[k]!==undefined)n[k]=String(n[k]).trim().replace(/\s+/g,' ')});
+  return n;
+ }
+ // ASO target template: Channel Partner Name | ASO | Apr-26 ... Mar-27.
+ // Channel Partner Name is retained as the target dealer dimension; ASO maps to Executive.
+ // The month headers define FY 26-27, so a separate FY column is not required.
+ let n={FY:'26-27'};
+ for(const [k,v] of Object.entries(o)){
+  const kk=norm(k);
+  if(kk==='executive name'||kk==='executive'||kk==='aso'||kk==='aso name'||kk==='sales officer'){
+    n.Executive=String(v??'').trim().replace(/\s+/g,' ');continue;
+  }
+  if(kk==='channel partner name'||kk==='channel partner'||kk==='dealer'||kk==='customer name'){
+    n['Customer Name']=String(v??'').trim().replace(/\s+/g,' ');continue;
+  }
+  if(kk==='financial year'||kk==='fy'||kk==='financialyear'){n.FY=normFY(v)||'26-27';continue;}
+  const mm=normMonth(k);
+  if(months.includes(mm))n[mm]=v;
+ }
+ n.FY=normFY(n.FY)||'26-27';
+ return n;
+});}
+/* Minimal native XLSX reader: ZIP local-file extraction + XML parsing. Supports standard unencrypted XLSX workbooks. */
+async function parseXLSX(buf){const u=new Uint8Array(buf),dv=new DataView(buf);let p=0,files={};while(p+30<u.length){if(dv.getUint32(p,true)!==0x04034b50)break;let method=dv.getUint16(p+8,true),csize=dv.getUint32(p+18,true),nlen=dv.getUint16(p+26,true),elen=dv.getUint16(p+28,true),name=new TextDecoder().decode(u.slice(p+30,p+30+nlen));let start=p+30+nlen+elen;let data=u.slice(start,start+csize);files[name]={method,data};p=start+csize}async function unzip(f){if(!f)throw Error('Missing XLSX component');if(f.method===0)return f.data;if(f.method===8){let ds=new DecompressionStream('deflate-raw'),ab=await new Response(new Blob([f.data]).stream().pipeThrough(ds)).arrayBuffer();return new Uint8Array(ab)}throw Error('Unsupported XLSX compression')};const xml=async n=>new TextDecoder().decode(await unzip(files[n]));let shared=[];if(files['xl/sharedStrings.xml']){let s=await xml('xl/sharedStrings.xml'),d=new DOMParser().parseFromString(s,'application/xml');shared=[...d.getElementsByTagName('si')].map(si=>[...si.getElementsByTagName('t')].map(t=>t.textContent).join(''))}let wb=await xml('xl/workbook.xml'),wd=new DOMParser().parseFromString(wb,'application/xml'),rels=await xml('xl/_rels/workbook.xml.rels'),rd=new DOMParser().parseFromString(rels,'application/xml');let sheets=[...wd.getElementsByTagName('sheet')],rid=sheets[0]?.getAttribute('r:id'),rel=[...rd.getElementsByTagName('Relationship')].find(x=>x.getAttribute('Id')===rid),path=rel?.getAttribute('Target')||'worksheets/sheet1.xml';path=path.replace(/^\//,'');if(!path.startsWith('xl/'))path='xl/'+path;let sx=await xml(path),sd=new DOMParser().parseFromString(sx,'application/xml');let rows=[...sd.getElementsByTagName('row')].map(row=>{let vals=[];[...row.getElementsByTagName('c')].forEach(c=>{let ref=c.getAttribute('r')||'',m=ref.match(/[A-Z]+/),letters=m?m[0]:'';let col=0;for(let ch of letters)col=col*26+ch.charCodeAt(0)-64;col--;let t=c.getAttribute('t'),v=c.getElementsByTagName('v')[0]?.textContent||'';if(t==='s')v=shared[+v]||'';vals[col]=v});return vals});let head=rows.shift()||[];return rows.map(a=>Object.fromEntries(head.map((h,i)=>[h||'Column '+(i+1),a[i]??''])))}
+function sampleData(){const states=['Kerala','Tamil Nadu','Karnataka','Andhra Pradesh','Telangana'],ex=['Anil','Meera','Nikhil','Prasanth','Roshin'],cats=['Pump','Engine','Generator'],items=['Pump A','Pump B','Engine X','Generator Z'];state.sales=[];for(let i=0;i<2200;i++){let m=months[i%12],fy=i%3?'26-27':'25-26',v=Math.round((50000+Math.random()*550000)*(1+(i%17)/20));state.sales.push({STATE:states[i%5], 'Customer Name':'Dealer '+(i%85+1),Item:items[i%4],CATEGORY:cats[i%3],'Shipped Qty':Math.max(1,Math.round(v/(1800+(i%5)*350))),Value:v,Month:m,FY:fy,Executive:ex[i%5]})}state.targets=ex.map((e,i)=>{let o={Executive:e,FY:'26-27','Customer Name':'Sample Dealer '+(i+1)};months.forEach((m,j)=>o[m]=Math.round(4500000+i*400000+j*120000));return o});state.salesLoaded=true;state.targetsLoaded=true;state.loaded=true;state.page='command';document.getElementById('fyBadge').textContent='FY 26-27';toast('Sample data loaded');render();}
+function downloadTemplate(){const csv='Channel Partner Name,ASO,Apr-26,May-26,Jun-26,Jul-26,Aug-26,Sep-26,Oct-26,Nov-26,Dec-26,Jan-27,Feb-27,Mar-27\nSample Dealer,Executive A,4500000,4500000,4500000,4500000,4500000,4500000,5000000,5000000,5000000,5000000,5000000,5000000\n';download('KOEL_ASO_Target_Template.csv',csv,'text/csv')}
+function download(name,data,type){const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([data],{type}));a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)}
+function exportCSV(){let r=filtered();let keys=['STATE','Customer Name','Item','CATEGORY','Shipped Qty','Value','Month','FY','Executive'];let csv=[keys.join(',')].concat(r.map(x=>keys.map(k=>`"${String(x[k]??'').replace(/"/g,'""')}"`).join(','))).join('\n');download('KOEL_Filtered_Data.csv',csv,'text/csv');}
+function exportXLS(){let r=filtered(),keys=['STATE','Customer Name','Item','CATEGORY','Shipped Qty','Value','Month','FY','Executive'];let rows=r.map(x=>keys.map(k=>esc(x[k])).join('</td><td>'));let html='<html><head><meta charset="utf-8"></head><body><table><tr>'+keys.map(esc).join('</th><th>')+'</th></tr>'+rows.map(x=>'<tr><td>'+x+'</td></tr>').join('')+'</table></body></html>';download('KOEL_Filtered_Data.xls',html,'application/vnd.ms-excel')}
+function printReport(){window.print()}
+function init(){document.documentElement.classList.toggle('light',state.theme==='light');initNav();showPage('upload');}
+init();
+</script>
+</body></html>
